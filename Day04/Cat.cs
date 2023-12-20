@@ -4,9 +4,13 @@ public class Cat : Animal
 {
 	public Cat(string name, int age) : base(name, age)
 	{
-		this.name = name;
-		this.age = age;
 	}
+
+	public Cat()
+	{
+
+	}
+
 	public string Meow()
 	{
 		string meow = "Meow";

@@ -10,6 +10,12 @@ public class Animal
 		this.name = name;
 		this.age = age;
 	}
+
+	public Animal()
+	{
+
+	}
+
 	public string Eat(string food)
 	{
 		string eat = $"Eat {food}";

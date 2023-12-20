@@ -7,6 +7,9 @@ public class Program
 
 		Console.WriteLine($"The cat named {cimol.name} is {cimol.age} years old. {cimol.name}'s {cimol.Meow()} indicates that he wants to {cimol.Eat("Fish")}");
 
+		Cat bolu = new();
+		Console.WriteLine(bolu.Meow());
+
 		Dog scooby = new("Scooby", 4);
 
 		Console.WriteLine($"The dog named {scooby.name} is {scooby.age} years old. {scooby.name}'s {scooby.Bark()} indicates that he wants to {scooby.Eat("Beef")}");
