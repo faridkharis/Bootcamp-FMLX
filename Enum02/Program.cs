@@ -6,6 +6,7 @@ class Program
 		int result = (int)HTTPStatus.OK;
 		Console.WriteLine(result);
 
+		// Not recommended to convert (unboxing) from int type to enum type
 		HTTPStatus resultEnum = (HTTPStatus)200;
 		Console.WriteLine(resultEnum);
 	}

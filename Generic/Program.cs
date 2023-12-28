@@ -4,7 +4,7 @@ class Program
 {
 	static void Main()
 	{
-		
+
 
 		MyCollection<int> myIntCollection = new(3);
 		myIntCollection.AddObject(3); //TypeSafety
@@ -12,7 +12,6 @@ class Program
 		myIntCollection.AddObject(5);
 
 		Console.WriteLine(myIntCollection.GetData(0));
-
 
 		MyCollection<string> myStringCollection = new(3);
 		myStringCollection.AddObject("a");

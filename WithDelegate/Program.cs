@@ -1,7 +1,19 @@
 ﻿// With Delegate
-// Must modify the library if want to add or remove listener
-// Signature => parameter dan return value harus sama
 // Single Delegate
+// Give flexibility if want to add or remove listener
+// Decoupled the library with its listener
+// Don't forget to make sure signature => parameter and return value must be same
+class Program
+{
+	static void Main()
+	{
+		GameController game = new();
+		SMS sms = new();
+
+		game.mySubscriber = SMS.SendSMS;
+		game.UpdateGameStatus();
+	}
+}
 
 public delegate void MyDelegate(string message);
 class GameController
@@ -18,19 +30,8 @@ class GameController
 }
 class SMS
 {
-	public void SendSMS(string message)
+	public static void SendSMS(string message)
 	{
 		Console.WriteLine("SMS " + message);
-	}
-}
-class Program
-{
-	static void Main()
-	{
-		GameController game = new GameController();
-		SMS sms = new SMS();
-
-		game.mySubscriber = sms.SendSMS;
-		game.UpdateGameStatus();
 	}
 }

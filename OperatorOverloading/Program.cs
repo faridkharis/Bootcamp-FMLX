@@ -14,7 +14,7 @@ public class Car : IAdditionOperators<Car, Car, Car>
   //Operator Overloading
   public static Car operator +(Car left, Car right)
   {
-    Car resultCar = new Car(left.price + right.price, 0, "");
+    Car resultCar = new(left.price + right.price, left.year + right.year, left.name + right.name);
     return resultCar;
   }
 }
@@ -22,9 +22,11 @@ class Program
 {
   static void Main()
   {
-    Car car = new Car(3000, 10, "a");
-    Car carb = new Car(5500, 11, "b");
+    Car car = new(3000, 10, "a");
+    Car carb = new(5500, 11, "b");
     Car carc = car + carb;
     Console.WriteLine(carc.price);
+    Console.WriteLine(carc.year);
+    Console.WriteLine(carc.name);
   }
 }

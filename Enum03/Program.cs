@@ -2,8 +2,8 @@
 {
 	static void Main()
 	{
-		Player playerOne = new Player(Condition.InProgress);
-		Player playerTwo = new Player(Condition.Win);
+		Player playerOne = new(Condition.InProgress);
+		Player playerTwo = new(Condition.Win);
 
 		Console.WriteLine(playerOne.condition == playerTwo.condition);
 	}
