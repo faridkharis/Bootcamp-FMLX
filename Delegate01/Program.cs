@@ -8,19 +8,20 @@
 
 		Youtuber firstYoutuber = new();
 
-		firstYoutuber.MySubscriber += firstSubscriber.GetNotification;
-		firstYoutuber.MySubscriber += secondSubscriber.GetNotification;
-		firstYoutuber.MySubscriber -= secondSubscriber.GetNotification;
+		firstYoutuber.MySubscriber = firstSubscriber.GetNotification;
+		firstYoutuber.MySubscriber = secondSubscriber.GetNotification;
+		firstYoutuber.MySubscriber = secondSubscriber.GetNotification;
 
 		firstYoutuber.UploadVideo();
 	}
 }
 
-public delegate void MySubscriber(string message);
+// public delegate void MySubscriber(string message);
 
 class Youtuber
 {
-	public event MySubscriber MySubscriber;
+	// public event MySubscriber MySubscriber;
+	public Action<string> MySubscriber;
 	public void UploadVideo()
 	{
 		Console.WriteLine("Uploading video...");

@@ -19,12 +19,12 @@ public delegate void MySubscriber(string message);
 
 class Youtuber
 {
-	Action<string> MySubscriber;
+	private event MySubscriber MySubscriber;
 	public bool AddSubscriber(MySubscriber sub)
 	{
 		if (MySubscriber is null)
 		{
-			MySubscriber = sub;
+			MySubscriber += sub;
 			return true;
 		}
 		if (MySubscriber.GetInvocationList().Contains(sub))
@@ -45,7 +45,6 @@ class Youtuber
 		MySubscriber.Invoke(message);
 	}
 }
-
 class Subscriber
 {
 	public void GetNotification(string message)
