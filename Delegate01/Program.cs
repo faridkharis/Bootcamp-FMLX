@@ -6,11 +6,11 @@
 		Subscriber secondSubscriber = new();
 		Subscriber thirdSubscriber = new();
 
-		Youtuber firstYoutuber = new();
-
-		firstYoutuber.MySubscriber = firstSubscriber.GetNotification;
-		firstYoutuber.MySubscriber = secondSubscriber.GetNotification;
-		firstYoutuber.MySubscriber = secondSubscriber.GetNotification;
+    Youtuber firstYoutuber = new()
+    {
+      MySubscriber = Subscriber.GetNotification
+    };
+    // firstYoutuber.MySubscriber = firstSubscriber.GetNotofication;
 
 		firstYoutuber.UploadVideo();
 	}
@@ -21,7 +21,7 @@
 class Youtuber
 {
 	// public event MySubscriber MySubscriber;
-	public Action<string> MySubscriber;
+	public Action<string>? MySubscriber;
 	public void UploadVideo()
 	{
 		Console.WriteLine("Uploading video...");
@@ -30,12 +30,12 @@ class Youtuber
 	}
 	public void SendNotification(string message)
 	{
-		MySubscriber.Invoke(message);
+		MySubscriber?.Invoke(message);
 	}
 }
 class Subscriber
 {
-	public void GetNotification(string message)
+	public static void GetNotification(string message)
 	{
 		Console.WriteLine("Subscriber get notified : " + message);
 	}
